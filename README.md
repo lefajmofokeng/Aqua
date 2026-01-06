@@ -411,6 +411,10 @@ describe('Aqua Accordion', () => {
 }
 ```
 
+## License & Usage
+
+MIT Licensed. Commercial use permitted with attribution. Component is designed for easy integration into portfolio sites, marketing pages, and client showcase sections.
+
 ---
 
 *Aqua transforms traditional accordion components into immersive process visualization tools. With its balanced content layout, smooth animations, and comprehensive accessibility features, it serves as both a functional UI component and an educational resource for modern web interaction patterns.*
