@@ -1,0 +1,222 @@
+/* Unique Prefix: sd2- (Special Design 2) used to prevent conflicts.
+    */
+
+    :root {
+        --sd2-font: 'Inter Tight', sans-serif;
+        --sd2-color-dark: #111111;
+        --sd2-color-gray-text: #666666;
+        --sd2-color-light-bg: #F6F6F6;
+        --sd2-color-white: #FFFFFF;
+        --sd2-radius: 24px;
+        --sd2-transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+    body {
+        margin: 0;
+        padding: 40px 20px;
+        font-family: var(--sd2-font);
+        background-color: #fff;
+        color: var(--sd2-color-dark);
+        display: flex;
+        justify-content: center;
+        min-height: 100vh;
+    }
+
+    .sd2-container {
+        max-width: 900px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    /* Header Section */
+    .sd2-header-section {
+        text-align: center;
+        margin-bottom: 60px;
+    }
+
+    .sd2-main-title {
+        font-size: 62px;
+        font-weight: 500;
+        margin: 0 0 20px 0;
+        letter-spacing: -0.02em;
+    }
+
+    .sd2-main-subtitle {
+        font-size: 18px;
+        line-height: 1.5;
+        color: var(--sd2-color-gray-text);
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    /* Accordion Styling */
+    .sd2-accordion {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .sd2-acc-item {
+        background-color: var(--sd2-color-white);
+        border-radius: var(--sd2-radius);
+        overflow: hidden;
+        border: 2px solid #EEEEEE;
+        transition: var(--sd2-transition);
+    }
+
+    /* Active State Styling */
+    .sd2-acc-item.sd2-active {
+        background-color: var(--sd2-color-light-bg);
+        border-color: transparent;
+    }
+
+    /* Accordion Trigger (Header) */
+    .sd2-acc-trigger {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 32px 40px;
+        cursor: pointer;
+        user-select: none;
+    }
+
+    .sd2-acc-title {
+        font-size: 32px;
+        font-weight: 500;
+        margin: 0;
+        letter-spacing: -0.5px;
+    }
+
+    /* Icon (+/-) Styling */
+    .sd2-acc-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: var(--sd2-color-light-bg);
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: var(--sd2-transition);
+    }
+
+    .sd2-acc-item.sd2-active .sd2-acc-icon {
+        background-color: var(--sd2-color-dark);
+    }
+
+    /* The lines forming the plus/minus */
+    .sd2-acc-icon::before,
+    .sd2-acc-icon::after {
+        content: '';
+        position: absolute;
+        background-color: var(--sd2-color-dark);
+        transition: var(--sd2-transition);
+    }
+
+    .sd2-acc-icon::before {
+        width: 14px;
+        height: 2px;
+    }
+
+    .sd2-acc-icon::after {
+        width: 2px;
+        height: 14px;
+    }
+
+    /* Rotate vertical line to make minus on active */
+    .sd2-acc-item.sd2-active .sd2-acc-icon::after {
+        transform: rotate(90deg);
+        background-color: var(--sd2-color-white);
+    }
+    
+    .sd2-acc-item.sd2-active .sd2-acc-icon::before {
+        background-color: var(--sd2-color-white);
+    }
+
+
+    /* Accordion Panel (Expandable Area) */
+    .sd2-acc-panel {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+    /* Content inside the panel */
+    .sd2-panel-content {
+        padding: 0 40px 50px 40px;
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Two columns: Text left, Image right */
+        gap: 40px;
+        align-items: center;
+        position: relative;
+    }
+
+    .sd2-panel-text-col {
+        position: relative;
+        padding-bottom: 60px; /* Space for the "Step 0X" */
+    }
+
+    .sd2-panel-desc {
+        font-size: 18px;
+        line-height: 1.6;
+        color: var(--sd2-color-gray-text);
+        margin: 0;
+        max-width: 380px;
+    }
+
+    .sd2-step-indicator {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        font-size: 28px;
+        font-weight: 600;
+        color: #b5b5b5; /* Light gray for the step number */
+    }
+
+    .sd2-panel-image-col {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* The internal image (e.g., the phone mockup) */
+    .sd2-internal-image {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        /* Use a drop shadow to make the white phone pop off the light gray bg if needed, 
+           though the source image relies on the image content itself. */
+        filter: drop-shadow(0px 10px 20px rgba(0,0,0,0.05));
+        border-radius: 20px;
+    }
+
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .sd2-main-title {
+            font-size: 32px;
+        }
+        
+        .sd2-acc-trigger {
+            padding: 24px;
+        }
+
+        .sd2-acc-title {
+            font-size: 24px;
+        }
+
+        .sd2-panel-content {
+            grid-template-columns: 1fr; /* Stack vertically on mobile */
+            padding: 0 24px 40px 24px;
+            gap: 30px;
+        }
+
+        .sd2-panel-desc {
+            max-width: 100%;
+        }
+        
+        .sd2-acc-icon {
+            width: 32px;
+            height: 32px;
+        }
+    }
