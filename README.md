@@ -381,13 +381,6 @@ describe('Aqua Accordion', () => {
 - Screen reader compatibility
 - Performance benchmarking
 
-## Project Information
-
-**Live Demo**: https://lefajmofokeng.github.io/Aqua  
-**Repository**: https://github.com/lefajmofokeng/Aqua  
-**Issue Tracker**: https://github.com/lefajmofokeng/Aqua/issues  
-**Documentation**: https://github.com/lefajmofokeng/Aqua/wiki  
-
 ## Deployment & Integration
 
 ### CDN Deployment
