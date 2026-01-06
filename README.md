@@ -2,6 +2,8 @@
 
 **A sophisticated, multi-step process visualization component** that transforms traditional accordion interfaces into an immersive user experience. Aqua presents sequential workflow stages through animated expandable panels, each revealing detailed content and contextual imagery, creating an interactive journey through complex processes.
 
+<img width="1920" height="1190" alt="aqua" src="https://github.com/user-attachments/assets/c43638e1-9153-455d-9f30-3b9eceec75e2" />
+
 
 ## Live Deployment
 
