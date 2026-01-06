@@ -419,5 +419,3 @@ describe('Aqua Accordion', () => {
 ---
 
 *Aqua transforms traditional accordion components into immersive process visualization tools. With its balanced content layout, smooth animations, and comprehensive accessibility features, it serves as both a functional UI component and an educational resource for modern web interaction patterns.*
- 
- 
